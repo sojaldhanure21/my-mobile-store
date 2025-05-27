@@ -1,0 +1,10 @@
+// landing.scss
+.landing {
+  padding: 2rem 0;
+}
+.product-card {
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}

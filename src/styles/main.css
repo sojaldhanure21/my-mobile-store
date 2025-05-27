@@ -1,0 +1,46 @@
+.logo {
+  flex-grow: 1;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.login-dialog {
+  padding: 1rem 0;
+  width: 30vw;
+}
+
+.toggle-mode,
+.toggle-role {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 1rem 0;
+}
+
+.user-group {
+  margin-top: 5px !important;
+}
+
+.user-options {
+  justify-content: center;
+  flex-direction: row !important;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.landing {
+  padding: 2rem 0;
+}
+
+.product-card {
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}/*# sourceMappingURL=main.css.map */
