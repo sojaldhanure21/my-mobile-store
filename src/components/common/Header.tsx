@@ -7,7 +7,7 @@ function Header() {
   const [role, setRole] = useState('user');
   const [form, setForm] = useState({ name: '', email: '', password: '' });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   return (

@@ -1,17 +1,16 @@
 import { combineReducers } from "redux";
-import globalStatesReducer, { GlobalStates } from "./reducer/globalStates"
 import { api } from "../api";
+import productListingReducer ,{ productsState } from "./reducer/products";
 
 export interface RootStatePersist {
-    globalStates: GlobalStates;
-    adminUserStates: any;
-    productsStates: any
+    adminUserStates?: any;
+    productsStates?: productsState
     api?: ReturnType<typeof api.reducer>;
 }
 
 // combining all reducers
 const rootReducer = combineReducers({
-    globalStates: globalStatesReducer,
+    productsStates: productListingReducer,
     [api.reducerPath]: api.reducer,
 })
 

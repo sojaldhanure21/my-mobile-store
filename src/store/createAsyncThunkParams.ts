@@ -1,9 +1,5 @@
-import { setCorrelationId } from "@/app/store/hotel/hotelsResultContext";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { v4 as uuid } from "uuid";
 
-const correlationId = uuid();
-setCorrelationId(correlationId);
 // function for create common async thunk for get parametrize api on name configuration
 const createAsyncThunkForGetApiWithParams: any = (name: any, apiUrl: any, requestParams: any) => {
     return createAsyncThunk(name, async (payload: any, { rejectWithValue }) => {
@@ -14,7 +10,6 @@ const createAsyncThunkForGetApiWithParams: any = (name: any, apiUrl: any, reques
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "*/*",
-                    "correlationId": correlationId
                 },
             };
             const response = await fetch(urlWithParams, fetchConfig);

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Typography, Grid, Card, CardContent } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { fetchHotelResultsApi } from '../store/redux/reducer/products';
 
 const products = [
     { title: 'Smartphone A', description: 'High performance mobile' },
@@ -8,12 +10,17 @@ const products = [
 ];
 
 function LandingPage() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchHotelResultsApi(''))
+    }, [])
+
     return (
         <Container className="landing">
             <Typography variant="h4" gutterBottom>Our Products</Typography>
             <Grid container spacing={2}>
                 {products.map((item, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
+                    <Grid key={index}>
                         <Card className="product-card">
                             <CardContent>
                                 <Typography variant="h6">{item.title}</Typography>
