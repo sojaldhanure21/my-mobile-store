@@ -1,0 +1,110 @@
+.logo {
+  flex-grow: 1;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.login-dialog {
+  padding: 1rem 0;
+  width: 30vw;
+}
+
+.toggle-mode,
+.toggle-role {
+  display: flex !important;
+  justify-content: center !important;
+  margin: 1rem 0;
+}
+
+.user-group {
+  margin-top: 5px !important;
+}
+
+.user-options {
+  justify-content: center;
+  flex-direction: row !important;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.landing {
+  padding: 2rem 0;
+}
+
+.product-card {
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card {
+  max-width: 300px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card .MuiCardMedia-root {
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #f9f9f9;
+}
+.product-card .MuiCardContent-root {
+  padding-bottom: 8px;
+}
+.product-card .MuiCardActions-root {
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+/* src/scss/components/_adminPage.scss */
+.admin-page {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+.admin-page .admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.admin-page .admin-actions {
+  display: flex;
+  gap: 1rem;
+}
+.admin-page .admin-product-card {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+.admin-page .admin-product-card .truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.admin-page .product-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.admin-page .product-form .MuiTextField-root {
+  margin-bottom: 1rem;
+}
+.admin-page .product-form button {
+  min-width: 100px;
+}/*# sourceMappingURL=main.css.map */
