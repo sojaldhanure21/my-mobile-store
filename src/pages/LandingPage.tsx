@@ -1,15 +1,9 @@
 import React, { useEffect } from "react";
-import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
+import { Container, Typography, Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHotelResultsApi } from "../store/redux/reducer/products";
 import { RootState } from "../store/redux/store";
 import ProductCard from "../components/product/ProductCard";
-
-const products = [
-  { title: "Smartphone A", description: "High performance mobile" },
-  { title: "Earbuds Pro", description: "Noise-cancelling earbuds" },
-  { title: "Wireless Charger", description: "Fast charging pad" },
-];
 
 function LandingPage() {
   const dispatch = useDispatch();

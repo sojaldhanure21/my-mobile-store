@@ -1,8 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardMedia } from "@mui/material";
 import { Typography, Box, Chip, Rating, Button } from "@mui/material";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/redux/store";
 
 const ProductCard = ({ product }: any) => {
   const {
@@ -23,11 +21,7 @@ const ProductCard = ({ product }: any) => {
   const discountedPrice = (price - (price * discountPercentage) / 100).toFixed(
     2
   );
-  const productCartList = useSelector(
-    (state: RootState) => state.productsStates?.productsApiData
-  );
-  console.log("productCartList", productCartList);
-
+ 
   return (
     <Card className="product-card">
       <CardMedia
