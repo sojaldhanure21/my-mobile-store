@@ -4,7 +4,7 @@ export interface HotelRoomsResponse {
 }
 
 export const api = createApi({
-    reducerPath: "api",    
+    reducerPath: "api",
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:3000", // Use http and correct the URL
         prepareHeaders: async (headers) => {
@@ -21,7 +21,14 @@ export const api = createApi({
                 body: credentials,
             }),
         }),
-    }),
-});
+        signUp: builder.mutation<any, any>({
+            query: (credentials) => ({
+                url: '/signup',
+                method: 'POST',
+                body: credentials
+            }),
+        }),
+    })
+})
 
-export const { useLoginMutation } = api;
+export const { useLoginMutation, useSignUpMutation } = api;

@@ -18,7 +18,7 @@ import {
   Alert,
 } from "@mui/material";
 import { useNavigate } from "react-router";
-import { useLoginMutation } from "../../store/api";
+import { useLoginMutation, useSignUpMutation } from "../../store/api";
 import MenuIcon from '@mui/icons-material/Menu';
 
 interface formErrorsProps {
@@ -35,9 +35,11 @@ function Header() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [formErrors, setFormErrors] = useState<formErrorsProps>({});
   const [login] = useLoginMutation();
+  const [signUp] = useSignUpMutation();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const [errorAlert, setErrorAlert] = useState<string>('');
+
 
   const handleLogin = async () => {
     const isValid = validateForm(form);
@@ -49,6 +51,31 @@ function Header() {
       try {
         const result = await login(payload).unwrap();
         if (result && result.message && result.message.includes("Login successful.")) {
+          setTimeout(() => {
+            setOpen(false);
+            setErrorAlert('');
+            navigate("/admin-dashboard");
+          }, 1000);
+        } else {
+          setErrorAlert(result.message);
+        }
+      } catch (error: any) {
+        setErrorAlert("Unable to login. Please try again.");
+      }
+    }
+  };
+
+  const handleSignUp = async () => {
+    const isValid = validateForm(form);
+    if (isValid) {
+      const payload = {
+        email: form.email,
+        password: form.password,
+        name: form.name
+      };
+      try {
+        const result = await signUp(payload).unwrap();
+        if (result && result.message && result.message.includes("User registered successfully.")) {
           setTimeout(() => {
             setOpen(false);
             setErrorAlert('');
@@ -191,7 +218,7 @@ function Header() {
             color="primary"
             fullWidth
             style={{ marginTop: "1rem" }}
-            onClick={handleLogin}
+            onClick={mode === "login" ? handleLogin : handleSignUp}
           >
             {mode === "login" ? "Login" : "Sign Up"}
           </Button>
